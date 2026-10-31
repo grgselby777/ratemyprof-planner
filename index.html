@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RateMyProf Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app">
+        <header class="app-header">
+            <p class="eyebrow">NYU course planner</p>
+            <h1>Choose a class and compare professors</h1>
+            <p class="subtitle">
+                Select a department, choose a class, and click a professor to see more details.
+            </p>
+        </header>
+
+        <section class="planner-layout" aria-label="Course and professor planner">
+            <aside class="department-panel">
+                <h2>Departments</h2>
+                <div id="department-list" class="department-list"></div>
+            </aside>
+
+            <section class="course-panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Available classes</p>
+                        <h2 id="selected-department">Select a department</h2>
+                    </div>
+                    <span id="course-count" class="count-label"></span>
+                </div>
+                <div id="course-list" class="course-list">
+                    <p class="empty-state">Choose a department to see its classes.</p>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+    <aside
+        id="professor-drawer"
+        class="professor-drawer"
+        aria-labelledby="drawer-professor-name"
+        aria-hidden="true"
+    >
+        <button id="close-drawer" class="close-button" type="button" aria-label="Close professor details">
+            &times;
+        </button>
+        <p id="drawer-course" class="eyebrow"></p>
+        <h2 id="drawer-professor-name">Professor details</h2>
+        <p id="drawer-department" class="drawer-muted"></p>
+
+        <div class="drawer-stats">
+            <div class="stat">
+                <span class="stat-label">Overall rating</span>
+                <strong id="drawer-rating"></strong>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Difficulty</span>
+                <strong id="drawer-difficulty"></strong>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Would take again</span>
+                <strong id="drawer-would-take-again"></strong>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Total ratings</span>
+                <strong id="drawer-rating-count"></strong>
+            </div>
+        </div>
+
+        <p id="drawer-description" class="drawer-description"></p>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
